@@ -1,0 +1,389 @@
+{
+  "dataset": {
+    "client_rows": 100000,
+    "record_rows": 100000,
+    "joined_rows": 100000,
+    "client_columns": 50,
+    "record_columns": 51,
+    "joined_columns": 100,
+    "churners": 49562,
+    "non_churners": 50438,
+    "churn_rate": 0.49562,
+    "target_definition": "churn between 31 and 60 days after observation, per provided overview",
+    "top_missing": [
+      {
+        "field": "numbcars",
+        "missing": 49366,
+        "pct": 0.49366
+      },
+      {
+        "field": "dwllsize",
+        "missing": 38308,
+        "pct": 0.38308
+      },
+      {
+        "field": "HHstatin",
+        "missing": 37923,
+        "pct": 0.37923
+      },
+      {
+        "field": "ownrent",
+        "missing": 33706,
+        "pct": 0.33706
+      },
+      {
+        "field": "dwlltype",
+        "missing": 31909,
+        "pct": 0.31909
+      },
+      {
+        "field": "lor",
+        "missing": 30190,
+        "pct": 0.3019
+      },
+      {
+        "field": "income",
+        "missing": 25436,
+        "pct": 0.25436
+      },
+      {
+        "field": "adults",
+        "missing": 23019,
+        "pct": 0.23019
+      },
+      {
+        "field": "infobase",
+        "missing": 22079,
+        "pct": 0.22079
+      },
+      {
+        "field": "prizm_social_one",
+        "missing": 7388,
+        "pct": 0.07388
+      },
+      {
+        "field": "avg6mou",
+        "missing": 2839,
+        "pct": 0.02839
+      },
+      {
+        "field": "avg6qty",
+        "missing": 2839,
+        "pct": 0.02839
+      },
+      {
+        "field": "avg6rev",
+        "missing": 2839,
+        "pct": 0.02839
+      },
+      {
+        "field": "truck",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "rv",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "marital",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "forgntvl",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "ethnic",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "kid0_2",
+        "missing": 1732,
+        "pct": 0.01732
+      },
+      {
+        "field": "kid3_5",
+        "missing": 1732,
+        "pct": 0.01732
+      }
+    ],
+    "class_stats": {
+      "0": {
+        "customers": 50438,
+        "mean_monthly_revenue": 59.218692458513544,
+        "mean_monthly_minutes": 543.2068952099337,
+        "mean_equipment_age_days": 363.280924717965,
+        "median_tenure_months": 16
+      },
+      "1": {
+        "customers": 49562,
+        "mean_monthly_revenue": 58.211073936647246,
+        "mean_monthly_minutes": 483.3064173273109,
+        "mean_equipment_age_days": 421.08952423227475,
+        "median_tenure_months": 17
+      }
+    },
+    "equipment_bands": [
+      {
+        "band": "180-364",
+        "n": 36348,
+        "churners": 17057,
+        "rate": 0.46926928579289096
+      },
+      {
+        "band": "730+",
+        "n": 10849,
+        "churners": 6280,
+        "rate": 0.5788551940270993
+      },
+      {
+        "band": "365-729",
+        "n": 34599,
+        "churners": 18632,
+        "rate": 0.5385126737766988
+      },
+      {
+        "band": "0-179",
+        "n": 18204,
+        "churners": 7593,
+        "rate": 0.4171061305207647
+      }
+    ],
+    "tenure_bands": [
+      {
+        "band": "37+",
+        "n": 5665,
+        "churners": 2679,
+        "rate": 0.4729037952338923
+      },
+      {
+        "band": "25-36",
+        "n": 19024,
+        "churners": 9510,
+        "rate": 0.49989486963835156
+      },
+      {
+        "band": "13-24",
+        "n": 42868,
+        "churners": 22197,
+        "rate": 0.5177988242978445
+      },
+      {
+        "band": "7-12",
+        "n": 31148,
+        "churners": 14679,
+        "rate": 0.47126621291896753
+      },
+      {
+        "band": "0-6",
+        "n": 1295,
+        "churners": 497,
+        "rate": 0.3837837837837838
+      }
+    ]
+  },
+  "model": {
+    "name": "L2-regularized logistic regression",
+    "feature_count": 39,
+    "features": [
+      "rev_Mean",
+      "mou_Mean",
+      "totmrc_Mean",
+      "ovrmou_Mean",
+      "ovrrev_Mean",
+      "roam_Mean",
+      "change_mou",
+      "change_rev",
+      "drop_vce_Mean",
+      "blck_vce_Mean",
+      "unan_vce_Mean",
+      "custcare_Mean",
+      "cc_mou_Mean",
+      "comp_vce_Mean",
+      "attempt_Mean",
+      "callwait_Mean",
+      "months",
+      "eqpdays",
+      "avg3rev",
+      "avg3mou",
+      "avg6rev",
+      "avg6mou",
+      "avg3qty",
+      "hnd_price",
+      "phones",
+      "models",
+      "uniqsubs",
+      "actvsubs"
+    ],
+    "train_rows": 80073,
+    "validation_rows": 19927,
+    "validation_churn_rate": 0.4940532945250163,
+    "roc_auc": 0.6138902543077692,
+    "top_decile": {
+      "customers": 1993,
+      "churners": 1338,
+      "churn_rate": 0.6713497240341194,
+      "lift": 1.3588609396473232,
+      "share_of_churners_captured": 0.13590655154900966,
+      "mean_monthly_revenue_units": 55.88590920656312
+    },
+    "risk_deciles": [
+      {
+        "decile": 1,
+        "n": 1993,
+        "churn_rate": 0.6713497240341194
+      },
+      {
+        "decile": 2,
+        "n": 1993,
+        "churn_rate": 0.6101354741595585
+      },
+      {
+        "decile": 3,
+        "n": 1993,
+        "churn_rate": 0.5429001505268439
+      },
+      {
+        "decile": 4,
+        "n": 1992,
+        "churn_rate": 0.5466867469879518
+      },
+      {
+        "decile": 5,
+        "n": 1993,
+        "churn_rate": 0.5107877571500251
+      },
+      {
+        "decile": 6,
+        "n": 1993,
+        "churn_rate": 0.4756648268941295
+      },
+      {
+        "decile": 7,
+        "n": 1992,
+        "churn_rate": 0.45582329317269077
+      },
+      {
+        "decile": 8,
+        "n": 1993,
+        "churn_rate": 0.4129453085800301
+      },
+      {
+        "decile": 9,
+        "n": 1993,
+        "churn_rate": 0.37782237832413446
+      },
+      {
+        "decile": 10,
+        "n": 1992,
+        "churn_rate": 0.33634538152610444
+      }
+    ],
+    "top_coefficients": [
+      {
+        "name": "eqpdays",
+        "coef": 0.1941676255200663
+      },
+      {
+        "name": "mou_Mean",
+        "coef": -0.17908856836605183
+      },
+      {
+        "name": "uniqsubs",
+        "coef": 0.14862501221645744
+      },
+      {
+        "name": "drop_vce_Mean",
+        "coef": 0.14455282556124605
+      },
+      {
+        "name": "avg6mou",
+        "coef": 0.14168071123428602
+      },
+      {
+        "name": "hnd_price",
+        "coef": -0.13181525625428517
+      },
+      {
+        "name": "change_mou",
+        "coef": -0.12220859405078138
+      },
+      {
+        "name": "avg3mou",
+        "coef": -0.09978266140816935
+      },
+      {
+        "name": "comp_vce_Mean",
+        "coef": -0.08883028032011633
+      },
+      {
+        "name": "totmrc_Mean",
+        "coef": -0.08596156412518238
+      },
+      {
+        "name": "actvsubs",
+        "coef": -0.08197199151084365
+      },
+      {
+        "name": "ovrrev_Mean",
+        "coef": 0.07216048574034453
+      },
+      {
+        "name": "ovrmou_Mean",
+        "coef": 0.06842288351346473
+      },
+      {
+        "name": "attempt_Mean",
+        "coef": -0.06719826791441433
+      },
+      {
+        "name": "change_rev",
+        "coef": 0.06156635885539957
+      }
+    ]
+  },
+  "scenario": {
+    "monitored_customers": 100000,
+    "target_share": 0.1,
+    "target_customers": 10000,
+    "top_decile_mean_monthly_revenue_units": 55.88590920656312,
+    "months_retained": 6,
+    "assumed_contact_cost_per_targeted_customer": 5,
+    "contact_cost_units": 50000,
+    "break_even_absolute_churn_reduction": 0.01491133176796323,
+    "cases": [
+      {
+        "absolute_60d_churn_reduction": 0.01,
+        "customers_retained_per_100k": 100,
+        "gross_revenue_units_preserved": 33531.54552393787,
+        "contact_cost_units": 50000,
+        "net_before_offer_and_service_costs": -16468.45447606213
+      },
+      {
+        "absolute_60d_churn_reduction": 0.03,
+        "customers_retained_per_100k": 300,
+        "gross_revenue_units_preserved": 100594.63657181361,
+        "contact_cost_units": 50000,
+        "net_before_offer_and_service_costs": 50594.63657181361
+      },
+      {
+        "absolute_60d_churn_reduction": 0.05,
+        "customers_retained_per_100k": 500,
+        "gross_revenue_units_preserved": 167657.72761968937,
+        "contact_cost_units": 50000,
+        "net_before_offer_and_service_costs": 117657.72761968937
+      }
+    ],
+    "assumption_note": "Same units as dataset revenue; currency not stated. Scenario, not forecast."
+  },
+  "market": {
+    "fcc_annual_churn_2023": 0.185,
+    "ctia_wireless_data_traffic_2024_trillion_mb": 132.5,
+    "ctia_traffic_increase_2024_trillion_mb": 32.4
+  }
+}

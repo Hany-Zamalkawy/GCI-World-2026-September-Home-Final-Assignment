@@ -1,0 +1,19 @@
+# Customer-level course data is not committed
+data/telecom/*.csv
+
+# Local analysis outputs and chart exports
+output/metrics.json
+output/validation_scores.npz
+output/charts/*.png
+
+# Python and notebook runtime files
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
